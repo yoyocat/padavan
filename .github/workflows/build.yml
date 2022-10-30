@@ -1,4 +1,4 @@
-name: Build
+name: build
 
 on: 
 #  push:
@@ -56,7 +56,7 @@ on:
         default: 'true'
 jobs:
   build:
-    name: build
+    name: ${{ inputs.target }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -88,6 +88,6 @@ jobs:
         if: github.event.inputs.release == 'true'
         with:
           commit: ${{ github.sha }}
-          tag: ${{ env.TAG_ANME }}
+          tag: Padavan
           artifacts: trunk/images/*.trx
           allowUpdates: true
