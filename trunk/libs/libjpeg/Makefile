@@ -1,4 +1,4 @@
-SRC_NAME=jpeg-9d
+SRC_NAME=jpeg-9e
 SRC_URL=http://www.ijg.org/files/$(SRC_NAME).tar.gz
 
 all: download_test extract_test config_test
