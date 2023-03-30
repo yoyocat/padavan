@@ -1,5 +1,5 @@
-SRC_NAME=e2fsprogs-1.46.5
-SRC_URL=https://www.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.46.5/$(SRC_NAME).tar.xz
+SRC_NAME=e2fsprogs-1.47.0
+SRC_URL=https://www.kernel.org/pub/linux/kernel/people/tytso/e2fsprogs/v1.47.0/$(SRC_NAME).tar.xz
 
 THISDIR = $(shell pwd)
 
