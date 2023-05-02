@@ -379,7 +379,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 			html += '<br />';
 			html += '<iframe src="https://myip.ipip.net" height="30" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>';
 			html += '<br />';
-			html += '<span>国外：<iframe src="https://api.myip.la" height="30" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" style="display:inline;width:50%;position:relative;top:4px;"></iframe></span>';
+			html += '<span>国外 IP：<iframe src="https://api.myip.la" height="30" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" style="display:inline;width:50%;position:relative;top:4px;"></iframe></span>';
 			//html += '<br />';
 			html += '<span><img src="https://www.google.com/favicon.ico?' + new Date().getTime() + '" /></span>';
 			$("ss_status").innerHTML = html;
@@ -1582,22 +1582,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 												</div>
 												<table width="100%" cellpadding="4" cellspacing="0" class="table">
 													<tr>
-														<th width="50%"><#Client#> <#running_status#> <br />国内和国外的GeoIP和谷歌访问</th>
+														<th width="50%">GeoIP 和谷歌访问状态</th>
 														<td id="ss_status"></td>
-													</tr>
-													<tr id="row_pdnsd_run">
-														<th width="50%"><#Dns2tcp#> <#running_status#></th>
-														<td id="dns2tcp_status"></td>
-													</tr>
-													<tr id="row_dnsproxy_run">
-														<th width="50%">dnsproxy<#running_status#></th>
-														<td id="dnsproxy_status"></td>
-													</tr>
-													<tr>
-														<th width="50%"><#InetControl#></th>
-														<td>
-															<input type="button" id="btn_reconnect" class="btn btn-info" value="<#Connect#>" onclick="submitInternet('Reconnect');">
-														</td>
 													</tr>
 													<tr>
 														<th width="50%"><#Main_Switch#></th>
@@ -1612,6 +1598,20 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 																<input type="radio" value="1" name="ss_enable" id="ss_enable_1" <% nvram_match_x("", "ss_enable", "1", "checked"); %>><#checkbox_Yes#>
 																<input type="radio" value="0" name="ss_enable" id="ss_enable_0" <% nvram_match_x("", "ss_enable", "0", "checked"); %>><#checkbox_No#>
 															</div>
+														</td>
+													</tr>
+													<tr id="row_pdnsd_run">
+														<th width="50%"><#Dns2tcp#> <#running_status#></th>
+														<td id="dns2tcp_status"></td>
+													</tr>
+													<tr id="row_dnsproxy_run">
+														<th width="50%">dnsproxy<#running_status#></th>
+														<td id="dnsproxy_status"></td>
+													</tr>
+													<tr>
+														<th width="50%"><#InetControl#></th>
+														<td>
+															<input type="button" id="btn_reconnect" class="btn btn-info" value="<#Connect#>" onclick="submitInternet('Reconnect');">
 														</td>
 													</tr>
 													<tr>
