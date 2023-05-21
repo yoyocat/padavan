@@ -46,7 +46,8 @@ sleep 20
 fi
 
 if [ $(nvram get sqm_enable) = 1 ] ; then
-logger -t "自动启动" "正在启动 SQM QOS..."
+sleep 10
+logger -t "自动启动" "正在启动SQM QOS..."
 /usr/lib/sqm/run.sh
 fi
 
@@ -101,12 +102,6 @@ fi
 if [ $(nvram get wireguard_enable) = 1 ] ; then
 logger -t "自动启动" "正在启动 wireguard..."
 /usr/bin/wireguard.sh start
-fi
-
-if [ $(nvram get sqm_enable) = 1 ] ; then
-sleep 30
-logger -t "自动启动" "正在启动SQM QOS..."
-/usr/lib/sqm/run.sh
 fi
 
 if [ $(nvram get frpc_enable) = 1 ] ; then
