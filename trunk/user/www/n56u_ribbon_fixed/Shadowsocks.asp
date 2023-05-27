@@ -374,15 +374,10 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 				stext = "<#Stopped#>";
 			else if (status_code == 1)
 				stext = "<#Running#>";
-			var html = '<span class="label label-' + (status_code != 0 ? 'success' : 'warning') + '">' +
-				stext + '</span>';
-			html += '<br />';
-			html += '<iframe src="https://myip.ipip.net" height="30" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>';
-			html += '<br />';
-			html += '<span>国外 IP：<iframe src="https://api.myip.la" height="30" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" style="display:inline;width:50%;position:relative;top:4px;"></iframe></span>';
-			//html += '<br />';
-			html += '<span><img src="https://www.google.com/favicon.ico?' + new Date().getTime() + '" /></span>';
-			$("ss_status").innerHTML = html;
+			$("ss_status").innerHTML = '<span class="label label-' + (status_code != 0 ? 'success' : 'warning') + '">' + stext + '</span>';
+			$("domestic_ip").innerHTML = '<iframe src="http://ip.3322.net" height="30" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>';
+			$("foreign_ip").innerHTML = '<iframe src="https://ifconfig.me/ip" height="30" scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>';
+			$("gg_status").innerHTML = '<span><img alt="无法访问" src="https://www.google.com/favicon.ico?' + new Date().getTime() + '" /></span>';
 		}
 		function fill_dns2tcp_status(status_code) {
 			var stext = "Unknown";
@@ -1582,10 +1577,6 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 												</div>
 												<table width="100%" cellpadding="4" cellspacing="0" class="table">
 													<tr>
-														<th width="50%">GeoIP 和谷歌访问状态</th>
-														<td id="ss_status"></td>
-													</tr>
-													<tr>
 														<th width="50%"><#Main_Switch#></th>
 														<td>
 															<div class="main_itoggle">
@@ -1600,6 +1591,28 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 															</div>
 														</td>
 													</tr>
+													<tr>
+														<th width="50%"><#InetControl#></th>
+														<td>
+															<input type="button" id="btn_reconnect" class="btn btn-info" value="<#Connect#>" onclick="submitInternet('Reconnect');">
+														</td>
+													</tr>
+													<tr>
+														<th width="50%">国内IP</th>
+														<td id="domestic_ip"></td>
+													</tr>
+													<tr>
+														<th width="50%">国外IP</th>
+														<td id="foreign_ip"></td>
+													</tr>
+													<tr>
+														<th width="50%">谷歌访问</th>
+														<td id="gg_status"></td>
+													</tr>
+													<tr>
+														<th width="50%"><#Client#> <#running_status#></th>
+														<td id="ss_status"></td>
+													</tr>
 													<tr id="row_pdnsd_run">
 														<th width="50%"><#Dns2tcp#> <#running_status#></th>
 														<td id="dns2tcp_status"></td>
@@ -1607,12 +1620,6 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 													<tr id="row_dnsproxy_run">
 														<th width="50%">dnsproxy<#running_status#></th>
 														<td id="dnsproxy_status"></td>
-													</tr>
-													<tr>
-														<th width="50%"><#InetControl#></th>
-														<td>
-															<input type="button" id="btn_reconnect" class="btn btn-info" value="<#Connect#>" onclick="submitInternet('Reconnect');">
-														</td>
 													</tr>
 													<tr>
 														<th width="50%">主服务器:</th>
